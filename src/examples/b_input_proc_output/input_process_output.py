@@ -31,3 +31,8 @@ def use_string_type():
 
     lang = 10.99
     print(lang)
+
+def add_numbers(num1, num2):
+    result = num1 + num2
+
+    return result
