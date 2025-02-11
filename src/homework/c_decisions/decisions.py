@@ -16,6 +16,6 @@ def get_faculty_rating(ratio):
         return 'Needs Improvement'
     elif (ratio <= 59):
         return 'Unacceptable'
-    else
-        return "Invalid ratio!"
+    else:
+        print("Ratio is invalid.")
     
