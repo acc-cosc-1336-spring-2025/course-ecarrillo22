@@ -1,6 +1,6 @@
 import unittest
 
-from src.examples.c_decisions.decisions import compare_numbers_equality, test_config
+from src.examples.c_decisions.decisions import compare_numbers_equality, is_number_in_range, test_config
 
 class Test_Config(unittest.TestCase):
 
@@ -30,4 +30,9 @@ class Test_Config(unittest.TestCase):
 
         self.assertEqual(compare_numbers_equality(10, 5), False)
         self.assertEqual(compare_numbers_equality(10, 10), True)
+
+    def test_is_number_in_range(self):
+
+        self.assertEqual(is_number_in_range(1, 10 ,5), True)
+        self.assertEqual(is_number_in_range(1, 10 ,-1), False)
 
