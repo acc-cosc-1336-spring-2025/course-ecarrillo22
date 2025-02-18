@@ -36,5 +36,6 @@ def get_generation(year):
         generation = "Generation Z"
     elif year >= 2013 and year <= 2024:
         generation = "Generation Alpha"
+    else generation = "Invalid Year"
 
     return generation
