@@ -27,13 +27,24 @@ def main():
             
             print(f"The factorial of {num} is {result}")
             print("----------------------------------")
+          
+            end_run = '0'
             
-            end_run = input("Do you want to exit: Y or N? ")
-            
+            while (end_run != 'y'):
+                end_run = input("Do you want to exit: Y or N? ")
+                    
+                if (end_run == 'y' or end_run == 'Y'):
+                    print("Exiting....")
+                    break
+                    
+                elif (end_run == 'n' or end_run == 'N'):
+                    print("Continuing...")
+                    break
+                else:
+                    print("Invalid response. Do you want to exit: Y or N?")
+
             if (end_run == 'y' or end_run == 'Y'):
-                print("Exiting....")
                 break
-            
             else:
                 continue
 
@@ -47,24 +58,47 @@ def main():
             print(f"The sum of the odd numbers up to {num} is {result}")
             print("----------------------------------")
 
-            end_run = input("Do you want to exit: Y or N? ")
+            end_run = '0'
             
+            while (end_run != 'y'):
+                end_run = input("Do you want to exit: Y or N? ")
+                    
+                if (end_run == 'y' or end_run == 'Y'):
+                    print("Exiting....")
+                    break
+                    
+                elif (end_run == 'n' or end_run == 'N'):
+                    print("Continuing...")
+                    break
+                else:
+                    print("Invalid response. Do you want to exit: Y or N?")
+
             if (end_run == 'y' or end_run == 'Y'):
-                print("Exiting....")
                 break
-            
             else:
                 continue
 
         elif (user_option == '3'):
             
-            end_run = input("Do you want to exit: Y or N? ")
+            end_run = '0'
             
+            while (end_run != 'y'):
+                end_run = input("Do you want to exit: Y or N? ")
+                    
+                if (end_run == 'y' or end_run == 'Y'):
+                    print("Exiting....")
+                    break
+                    
+                elif (end_run == 'n' or end_run == 'N'):
+                    print("Continuing...")
+                    break
+                else:
+                    print("Invalid response. Do you want to exit: Y or N?")
+
             if (end_run == 'y' or end_run == 'Y'):
-                print("Exiting....")
                 break
-            
             else:
+                user_option = '0'
                 continue
 
         else:
