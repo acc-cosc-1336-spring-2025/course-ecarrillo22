@@ -1,7 +1,7 @@
 import repetition
 
 def main():
-    result = repetition.for_nested_loop(2)
+    result = repetition.multiplication_table_with_while(10, 10)
     
 #run the main function
 main()

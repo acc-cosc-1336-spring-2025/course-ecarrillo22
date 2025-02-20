@@ -85,3 +85,19 @@ def for_nested_loop(num):
 
         for j in range(0, num):
             print("\tInner loop running...")
+
+def multiplication_table_with_while(rows, cols):
+
+    r = 0
+    
+    while(r < rows):
+        c = 0
+
+        while(c < cols):
+            product = (r+1) * (c+1)
+            print(product, end = " ")
+
+            c += 1
+
+        r += 1
+        print(" ")
