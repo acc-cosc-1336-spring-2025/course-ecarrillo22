@@ -10,3 +10,15 @@ def get_factorial(num):
 
 def sum_odd_numbers(num):
     
+    sum = 0
+
+
+    while(num > 0):
+        
+        if num % 2 != 0:
+            sum += num
+            
+        num -= 1
+
+
+    return sum

@@ -42,7 +42,7 @@ def handle_menu(user_option):
     if(user_option == '1'):
         num = input("Enter a number: ")
         result = use_a_while_loop(int(num))
-        print("Use a while loop: ",result)
+        print("Use a while loop: ", result)
     elif(user_option == '2'):
         num = input("Enter a number: ")
         result = get_sum_of_squares(int(num))
@@ -51,3 +51,8 @@ def handle_menu(user_option):
         print("Exiting...")
     else:
         print("Invalid menu option")
+
+def use_a_for_range_loop(num):
+    
+    for val in range(0,num):
+        print(val, "Hello")
