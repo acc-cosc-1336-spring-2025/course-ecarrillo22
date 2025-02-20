@@ -101,3 +101,12 @@ def multiplication_table_with_while(rows, cols):
 
         r += 1
         print(" ")
+
+def multiplication_table_for(rows, cols):
+
+    for r in range(0, rows):
+        for c in range(0, cols):
+            product = (r+1) * (c+1)
+            print(str(product).rjust(3, " "), end = " ")
+
+        print(" ")
