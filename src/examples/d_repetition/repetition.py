@@ -95,7 +95,7 @@ def multiplication_table_with_while(rows, cols):
 
         while(c < cols):
             product = (r+1) * (c+1)
-            print(product, end = " ")
+            print(str(product).rjust(3, " "), end = " ")
 
             c += 1
 
