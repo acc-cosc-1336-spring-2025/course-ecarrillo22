@@ -16,3 +16,4 @@ class Test_Config(unittest.TestCase):
     def test_get_seconds(self):
         self.assertEqual(get_seconds(3800), 20)
         self.assertEqual(get_seconds(3600), 0)
+        
