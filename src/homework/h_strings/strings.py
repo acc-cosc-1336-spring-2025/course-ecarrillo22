@@ -10,4 +10,31 @@ def get_hamming_distance(dna1, dna2):
     return hamming_distance
 
 
-#def get_dna_complement(dna):
+def get_dna_complement(dna):
+
+    new_dna = ''
+
+    for nucleotide in dna:
+                
+        if nucleotide == 'A':
+            new_dna += 'T'
+        elif nucleotide == 'T':
+            new_dna += 'A'
+        elif nucleotide == 'C':
+            new_dna += 'G'
+        elif nucleotide == 'G':
+            new_dna += 'C'
+        
+    reverse_dna = new_dna[::-1]
+
+    return reverse_dna
+
+def valid_dna(dna):
+    
+    for nuc in dna:
+        if nuc not in "AGCT":
+            return False
+    
+    return True
+
+    
