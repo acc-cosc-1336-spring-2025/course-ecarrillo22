@@ -1,27 +1,31 @@
 #
-def get_lowest_list_value(num_list):
-
-    lowest_num = num_list[0]
+def get_p_distance(list1, list2):
     
-    for num in num_list:
-        if num < lowest_num:
-            lowest_num = num
+    p_distance = 0
+
+    for item in range(len(list1)):
+        if list1[item] != list2[item]:
+            p_distance += 1
+
+    return p_distance
+
+def get_p_distance_matrix(list1):
+
+    n = len(list1)
     
-    return lowest_num
-
-def get_highest_list_value(num_list):
-
-    highest_num = num_list[0]
-
-    for num in num_list:
-        if num > highest_num:
-            highest_num = num
-
-    return highest_num
+    p_distance_matrix = [[0] * n for _ in range(n)]
+    
+    for i in range(n):
+        for j in range(i, n):
+            distance = get_p_distance(list1[i], list1[j])/10
+            p_distance_matrix[i][j] = distance
+            p_distance_matrix[j][i] = distance  
+    
+    return p_distance_matrix
 
 def display_menu():
-    
-    print("1-Show list's highest and lowest values")
+
+    print("1-Display p distance matrix")
     print("2-Exit")
 
 def run_menu():
@@ -44,27 +48,26 @@ def run_menu():
             menu_option = '0'
 
 def handle_menu_option(option):
-        
+    
     if (option == '1'):
 
-        num_list = []
-        add_more = 'y'
+        string_list = []
+        sub_list = 4
+        nucs = 0
 
-        while (len(num_list) <= 2):
-            num = int(input("Enter a value for your list: "))
-            num_list.append(num)
+        while(nucs < 2 or nucs > 10):
+            nucs = int(input("How many nucleotides do you want in your DNA sequences? (2-10): "))
+        
+        for i in range(sub_list):
+            sublist = []
+            for j in range(nucs):
+                element = input(f"Enter a DNA nucleotide (A,G,C,T) ({j+1}) for DNA sequence {i+1}: ").upper()
+                sublist.append(element)
+            string_list.append(sublist)
+        
+        print(f'The distance matrix for your string {string_list} is below.')
 
-        while (add_more == 'y'):
-            add_more = input("Do you want to enter another value? Y or N: ")
-            
-            if (add_more.lower() == 'y'):
-                num = int(input("Enter another value for your list: "))
-                num_list.append(num)
+        matrix = get_p_distance_matrix(string_list)
 
-        lowest_value = get_lowest_list_value(num_list)
-        highest_value = get_highest_list_value(num_list)
-
-        print(f"Your list is {num_list}.")
-        print(f"The lowest value in your list is {lowest_value}.")
-        print(f"The highest value in your list is {highest_value}.")
-
+        for row in matrix:
+            print(row)
